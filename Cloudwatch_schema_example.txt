@@ -1,0 +1,19 @@
+type: CloudWatch Alarm Custom v1_0
+alarm_specs: StatusCheckAlarm
+metric_name: StatusCheckFailed_Any
+namespace: AWS/EC2          
+units: Seconds                                                                                                       
+dimensions:                                
+   “Server=i-1a3b5678,Drive=Test”:600                       
+monitor:
+  alarm_specs:   
+     StatusCheckAlarm:       
+     type: FS/image-api-dev-web                            	   
+     comparison_operator: GreaterThanOrEqualToThreshold 
+	 evaluation_periods: 1
+	 statistic: Average
+     threshold: 1                
+     alarm: <value>               
+     ok: <value>                 
+     insufficient_data: <value>  	  
+  
